@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "123461787288",
+    "firebase_url": "https://aurora-test1-default-rtdb.firebaseio.com",
+    "project_id": "aurora-test1",
+    "storage_bucket": "aurora-test1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123461787288:android:4dbb6193ea30f2eda97aed",
+        "android_client_info": {
+          "package_name": "com.example.penguin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123461787288-3msr08ken8e8dsbcubtljeoe3k3vpjgg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUvsVIMK2TyQBEe6mQzxW9_fe8BpM_vDs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "123461787288-3msr08ken8e8dsbcubtljeoe3k3vpjgg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
