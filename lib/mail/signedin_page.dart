@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:penguin/firebase_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:penguin/firestore/firestore_list.dart';
 
 SignedInPageState pageState;
 
@@ -197,6 +198,24 @@ class SignedInPageState extends State<SignedInPage> {
               ),
               onPressed: () {
                 fp.withdrawalAccount();
+              },
+            ),
+          ),
+
+          // Send Password Reset Email by Korean
+          Container(
+            margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+            child: RaisedButton(
+              color: Colors.blueGrey[300],
+              child: Text(
+                "Cloud Firestore",
+                style: TextStyle(color: Colors.white),
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => FirestoreFirstDemo()));
               },
             ),
           ),
