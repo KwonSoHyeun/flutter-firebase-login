@@ -23,9 +23,9 @@ class FirestoreFirstDemoState extends State<FirestoreFirstDemo> {
   final String fnDateTime = "datetime";
 
   TextEditingController _newNameCon = TextEditingController();
-  TextEditingController _newDescCon = TextEditingController();
+  TextEditingController _newTelCon = TextEditingController();
   TextEditingController _undNameCon = TextEditingController();
-  TextEditingController _undDescCon = TextEditingController();
+  TextEditingController _undTelCon = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -166,7 +166,7 @@ class FirestoreFirstDemoState extends State<FirestoreFirstDemo> {
                 ),
                 TextField(
                   decoration: InputDecoration(labelText: "Telephone"),
-                  controller: _newDescCon,
+                  controller: _newTelCon,
                 )
               ],
             ),
@@ -176,19 +176,18 @@ class FirestoreFirstDemoState extends State<FirestoreFirstDemo> {
               child: Text("Cancel"),
               onPressed: () {
                 _newNameCon.clear();
-                _newDescCon.clear();
+                _newTelCon.clear();
                 Navigator.pop(context);
               },
             ),
             FlatButton(
               child: Text("Create"),
               onPressed: () {
-                if (_newDescCon.text.isNotEmpty &&
-                    _newNameCon.text.isNotEmpty) {
-                  createDoc(_newNameCon.text, _newDescCon.text);
+                if (_newTelCon.text.isNotEmpty && _newNameCon.text.isNotEmpty) {
+                  createDoc(_newNameCon.text, _newTelCon.text);
                 }
                 _newNameCon.clear();
-                _newDescCon.clear();
+                _newTelCon.clear();
                 Navigator.pop(context);
               },
             )
@@ -218,7 +217,7 @@ class FirestoreFirstDemoState extends State<FirestoreFirstDemo> {
 
   void showUpdateOrDeleteDocDialog(DocumentSnapshot doc) {
     _undNameCon.text = doc[fnName];
-    _undDescCon.text = doc[fnTel];
+    _undTelCon.text = doc[fnTel];
     showDialog(
       barrierDismissible: false,
       context: context,
@@ -235,7 +234,7 @@ class FirestoreFirstDemoState extends State<FirestoreFirstDemo> {
                 ),
                 TextField(
                   decoration: InputDecoration(labelText: "Telephone"),
-                  controller: _undDescCon,
+                  controller: _undTelCon,
                 )
               ],
             ),
@@ -245,16 +244,15 @@ class FirestoreFirstDemoState extends State<FirestoreFirstDemo> {
               child: Text("Cancel"),
               onPressed: () {
                 _undNameCon.clear();
-                _undDescCon.clear();
+                _undTelCon.clear();
                 Navigator.pop(context);
               },
             ),
             FlatButton(
               child: Text("Update"),
               onPressed: () {
-                if (_undNameCon.text.isNotEmpty &&
-                    _undDescCon.text.isNotEmpty) {
-                  updateDoc(doc.documentID, _undNameCon.text, _undDescCon.text);
+                if (_undNameCon.text.isNotEmpty && _undTelCon.text.isNotEmpty) {
+                  updateDoc(doc.documentID, _undNameCon.text, _undTelCon.text);
                 }
                 Navigator.pop(context);
               },

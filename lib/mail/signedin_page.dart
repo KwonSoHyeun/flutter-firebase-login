@@ -202,7 +202,7 @@ class SignedInPageState extends State<SignedInPage> {
             ),
           ),
 
-          // Send Password Reset Email by Korean
+          // Firebase CloudStore CRUD
           Container(
             margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
             child: RaisedButton(
